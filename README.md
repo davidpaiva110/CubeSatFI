@@ -1,6 +1,6 @@
-# CubeSatFI
+![CubeSatFI](logo_bar.jpeg)
 
-<h2> 1. Description </h2>
+<h2> 1. The Fault Injector </h2>
 
 CubeSatFI is a fault injection platform for CubeSats meant to facilitate the incorporation of this extra step in the Verification and Validation of CubeSats software. CubeSatFI allows the easy definition of fault injection campaigns that emulate the effects of space radiation. SEU are emulated realistically through bit-flip faults injected in the processor registers and in other locations of the CubeSat boards that can be reached by boundary-scan, which is available in CubeSat boards through JTAG Test Access Port. The execution of the fault injection campaigns is controlled by the CubeSatFI platform in a fully automated mode.
 
