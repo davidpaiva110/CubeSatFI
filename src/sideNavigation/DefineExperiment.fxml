@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="apExpirienceDefinition" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="700.0" minWidth="850.0" style="-fx-background-color: #dae9f4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sideNavigation.DefineExperimentController">
+   <children>
+      <HBox alignment="TOP_CENTER" prefHeight="804.0" prefWidth="850.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <VBox>
+               <children>
+                  <Text fx:id="lbExpirienceDef" fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Definição da Experiência">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="lbExpirienceName" fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome da Experiência">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="tfNomeExperiencia">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Text fx:id="lbExpirienceDec" fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição da Experiência">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+                  <TextArea fx:id="tfDescricaoExperiencia" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="368.0" prefWidth="398.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="42.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="13.0">
+                           <children>
+                              <Text fx:id="lbNumFaults" fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Número Total de Falhas a Gerar">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="lbNumBitFlips" fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Número de Bit Flips por Falha">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Text>
+                              <CheckBox fx:id="checkSemente" mnemonicParsing="false" text="Usar Semente de Geração" textFill="#274c5e">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </CheckBox>
+                              <Text fx:id="lbResponsavel" fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Pessoa Responsável">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="115.0" prefWidth="172.0" spacing="5.0">
+                           <children>
+                              <TextField fx:id="tfNFalhas" text="100">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TextField>
+                              <TextField fx:id="tfNBits" text="1">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TextField>
+                              <TextField fx:id="tfSemente" disable="true" />
+                              <TextField fx:id="tfResponsavel" prefHeight="25.0" prefWidth="0.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="30.0">
+                     <children>
+                        <Button fx:id="btnGoldenRun" mnemonicParsing="false" onMouseClicked="#onClickGoldenRun" prefHeight="20.0" prefWidth="160.0" style="-fx-background-color: #274c5e;" text="Golden Run" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="btnImport" alignment="TOP_CENTER" mnemonicParsing="false" onMouseClicked="#onClickImportBtn" prefHeight="20.0" prefWidth="160.0" style="-fx-background-color: #274c5e;" text="Importar Definições" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="30.0">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                     <children>
+                        <Button fx:id="btnGererate" mnemonicParsing="false" onMouseClicked="#onClickGenarateBtn" prefHeight="20.0" prefWidth="160.0" style="-fx-background-color: #274c5e;" text="Gerar Experiência" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox>
+               <children>
+                  <Text fx:id="lbDefMascAndTig" fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Definição das Máscaras e Triggers das Falhas">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Text>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="55.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero0" mnemonicParsing="false" onMouseClicked="#onClickR00" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne0" mnemonicParsing="false" onMouseClicked="#onClickR01" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfZero" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R1">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="55.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero1" mnemonicParsing="false" onMouseClicked="#onClickR10" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne1" mnemonicParsing="false" onMouseClicked="#onClickR11" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfOne" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R2">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="55.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero2" mnemonicParsing="false" onMouseClicked="#onClickR20" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne2" mnemonicParsing="false" onMouseClicked="#onClickR21" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfTwo" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R3">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="55.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero3" mnemonicParsing="false" onMouseClicked="#onClickR30" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne3" mnemonicParsing="false" onMouseClicked="#onClickR31" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfThree" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R4">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="55.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero4" mnemonicParsing="false" onMouseClicked="#onClickR40" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne4" mnemonicParsing="false" onMouseClicked="#onClickR41" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfFour" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R5">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="55.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero5" mnemonicParsing="false" onMouseClicked="#onClick50" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne5" mnemonicParsing="false" onMouseClicked="#onClickR51" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfFive" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R6">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="55.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero6" mnemonicParsing="false" onMouseClicked="#onClickR60" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne6" mnemonicParsing="false" onMouseClicked="#onClickR61" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfSix" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R7">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="55.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero7" mnemonicParsing="false" onMouseClicked="#onClick70" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne7" mnemonicParsing="false" onMouseClicked="#onClickR71" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfSeven" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R8">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="55.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero8" mnemonicParsing="false" onMouseClicked="#onClickR80" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne8" mnemonicParsing="false" onMouseClicked="#onClickR81" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfEight" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R9">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="55.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero9" mnemonicParsing="false" onMouseClicked="#onClick90" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne9" mnemonicParsing="false" onMouseClicked="#onClickR91" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfNine" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R10">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="48.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero10" mnemonicParsing="false" onMouseClicked="#onClickR100" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne10" mnemonicParsing="false" onMouseClicked="#onClickR101" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfTen" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R11">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="48.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero11" mnemonicParsing="false" onMouseClicked="#onClick110" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne11" mnemonicParsing="false" onMouseClicked="#onClickR111" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfEleven" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="R12">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="48.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZero12" mnemonicParsing="false" onMouseClicked="#onClickR120" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOne12" mnemonicParsing="false" onMouseClicked="#onClickR121" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfTwelve" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="SP (R13)">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="22.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZeroSP" mnemonicParsing="false" onMouseClicked="#onClickSP0" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOneSP" mnemonicParsing="false" onMouseClicked="#onClickSP1" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfSP" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="LR (R14)">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="22.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZeroLR" mnemonicParsing="false" onMouseClicked="#onClickLR0" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOneLR" mnemonicParsing="false" onMouseClicked="#onClickLR1" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfLR" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="PC (R15)">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="22.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnZeroPC" mnemonicParsing="false" onMouseClicked="#onClickPC0" style="-fx-background-color: #274c5e;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnOnePC" mnemonicParsing="false" onMouseClicked="#onClickPC1" style="-fx-background-color: #274c5e;" text="1" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="tfPC" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="231.0" text="00000000000000000000000000000000" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Line endX="259.5" startX="-100.0" stroke="#274c5e">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Line>
+                  <TabPane fx:id="tabTriggers" prefHeight="200.0" prefWidth="350.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Temporal">
+                           <content>
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Trigger T0">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="70.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextField fx:id="tfT0" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onT0MouseClicked" onMouseEntered="#onT0MouseEntered" onMouseExited="#onT0MouseExited" prefHeight="26.0" prefWidth="150.0" text="200" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Text fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Trigger T1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="70.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextField fx:id="tfT1" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onT1MouseClicked" onMouseEntered="#onT1MouseEntered" onMouseExited="#onT1MouseExited" prefHeight="26.0" prefWidth="150.0" text="300" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Text fx:id="lbTEnd" fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Trigger TFim">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="57.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextField fx:id="tfTFim" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onTfimMouseClicked" onMouseEntered="#onTfimMouseEntered" onMouseExited="#onTfimMouseExited" prefHeight="26.0" prefWidth="150.0" text="1000">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="4.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                      </Tab>
+                      <Tab text="Espacial">
+                        <content>
+                              <VBox spacing="8.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Text fx:id="lbTEnd1" fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Program Counter (PC)">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="30.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextField fx:id="tfTriggerPC" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onTfimMouseClicked" onMouseEntered="#onTfimMouseEntered" onMouseExited="#onTfimMouseExited" prefHeight="26.0" prefWidth="150.0" text="01010101">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Text fx:id="lbTEnd11" fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="End Program Counter (PC)">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="37.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextField fx:id="tfTriggerPCEnd" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onTfimMouseClicked" onMouseEntered="#onTfimMouseEntered" onMouseExited="#onTfimMouseExited" prefHeight="26.0" prefWidth="150.0" text="01010101">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Text fx:id="lbTEnd2" fill="#274c5e" strokeType="OUTSIDE" strokeWidth="0.0" text="TEnd">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="159.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextField fx:id="tfTEndSpacial" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onTfimMouseClicked" onMouseEntered="#onTfimMouseEntered" onMouseExited="#onTfimMouseExited" prefHeight="26.0" prefWidth="150.0" text="5000">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="4.0" />
+                                 </padding>
+                              </VBox>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="6.0" left="30.0" right="6.0" top="6.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
